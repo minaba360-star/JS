@@ -143,7 +143,7 @@ const FormulaireInscription: React.FC = () => {
       };
       localStorage.setItem("user", JSON.stringify(userData));
       navigate("/dashboardcandidat", { replace: true });
-    } catch  {
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Une erreur est survenue pendant l’inscription.",
@@ -154,9 +154,9 @@ const FormulaireInscription: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 flex flex-col pt-16">
       <main className="flex-grow flex items-center justify-center py-10">
-        <div className="bg-white shadow-lg rounded-lg p-8 text-center mb-12">
+        <div className="bg-white shadow-lg rounded-lg p-20 text-center mb-15 w-full max-w-4xl">
           <h2 className="text-4xl font-extrabold text-center text-blue-700 mb-3">
-            Formulaire d’inscription de candidature
+            Inscription 
           </h2>
 
           <form
@@ -175,7 +175,7 @@ const FormulaireInscription: React.FC = () => {
                   id="prenom"
                   type="text"
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                   placeholder="Entrez votre prénom"
                 />
               </div>
@@ -189,7 +189,7 @@ const FormulaireInscription: React.FC = () => {
                   id="nom"
                   type="text"
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                   placeholder="Entrez votre nom"
                 />
               </div>
@@ -205,7 +205,7 @@ const FormulaireInscription: React.FC = () => {
                   id="dateNaissance"
                   type="date"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                 />
               </div>
 
@@ -218,7 +218,7 @@ const FormulaireInscription: React.FC = () => {
                   type="text"
                   placeholder="Ville"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                 />
               </div>
             </div>
@@ -233,7 +233,7 @@ const FormulaireInscription: React.FC = () => {
                   id="email"
                   type="email"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                   placeholder="exemple@mail.com"
                 />
               </div>
@@ -246,7 +246,7 @@ const FormulaireInscription: React.FC = () => {
                   id="cin"
                   type="text"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                 />
               </div>
             </div>
@@ -262,7 +262,7 @@ const FormulaireInscription: React.FC = () => {
                   type="tel"
                   placeholder="77 000 00 00"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                 />
               </div>
 
@@ -274,7 +274,7 @@ const FormulaireInscription: React.FC = () => {
                   id="adresse"
                   type="text"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                   placeholder="Votre adresse complète"
                 />
               </div>
@@ -292,7 +292,7 @@ const FormulaireInscription: React.FC = () => {
                     type={showPassword ? "text" : "password"}
                     onChange={handleChange}
                     placeholder="••••••••"
-                    className="w-full border rounded-lg p-3 pr-10 focus:ring-2 focus:ring-blue-500"
+                    className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                   />
                   <button
                     type="button"
@@ -314,7 +314,7 @@ const FormulaireInscription: React.FC = () => {
                     type={showConfirmPassword ? "text" : "password"}
                     onChange={handleChange}
                     placeholder="••••••••"
-                    className="w-full border rounded-lg p-3 pr-10 focus:ring-2 focus:ring-blue-500"
+                    className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                   />
                   <button
                     type="button"
@@ -338,7 +338,7 @@ const FormulaireInscription: React.FC = () => {
                 <select
                   id="niveau"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                 >
                   <option value="">-- Sélectionnez un niveau --</option>
                   <option value="Master">Master</option>
@@ -354,7 +354,7 @@ const FormulaireInscription: React.FC = () => {
                 <select
                   id="specialite"
                   onChange={handleChange}
-                  className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
                 >
                   <option value="">-- Sélectionnez --</option>
                   <option value="Frontend">Développeur Frontend</option>
@@ -366,157 +366,42 @@ const FormulaireInscription: React.FC = () => {
             </div>
 
             {/* --- Expérience --- */}
-          <div>
-  <label className="block text-gray-600 font-semibold mb-1">
-    Années d’expérience
-  </label>
-  <input
-    id="experience"
-    type="number"
-    placeholder="Ex : 2"
-    min="0"
-    step="1"
-    onChange={handleChange}
-    className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500"
-  />
-</div>
-
+            <div>
+              <label className="block text-gray-600 font-semibold mb-1">
+                Années d’expérience
+              </label>
+              <input
+                id="experience"
+                type="number"
+                placeholder="Ex : 2"
+                onChange={handleChange}
+                className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
+              />
+            </div>
 
             {/* --- Fichiers --- */}
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* === CV === */}
-              <div>
-                <label className="block text-sm font-medium mb-1">CV</label>
-                <input
-                  id="cv"
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  className="hidden"
-                  required
-                  onChange={(e) => {
-                    handleChange(e);
-                    if (e.target.files && e.target.files.length > 0) {
-                      const file = e.target.files[0];
-                      setFormData((prev) => ({
-                        ...prev,
-                        cvPreview: URL.createObjectURL(file),
-                      }));
-                    }
-                  }}
-                />
-                <label
-                  htmlFor="cv"
-                  className="block bg-blue-900 text-white text-center py-2 rounded-lg cursor-pointer hover:bg-blue-500 transition"
-                >
-                  📎 Joindre CV
-                </label>
-
-                {/* Affichage du fichier sélectionné */}
-                {formData.cv && (
-                  <div className="mt-2 text-sm text-gray-600">
-                    <p>📄 {formData.cv.name}</p>
-                    <a
-                      href={formData.cvPreview}
-                      download={formData.cv.name}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      Voir / Télécharger
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* === Diplôme === */}
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Diplôme
-                </label>
-                <input
-                  id="diplome"
-                  type="file"
-                  accept=".pdf,.jpg,.png"
-                  className="hidden"
-                  required
-                  onChange={(e) => {
-                    handleChange(e);
-                    if (e.target.files && e.target.files.length > 0) {
-                      const file = e.target.files[0];
-                      setFormData((prev) => ({
-                        ...prev,
-                        diplomePreview: URL.createObjectURL(file),
-                      }));
-                    }
-                  }}
-                />
-                <label
-                  htmlFor="diplome"
-                  className="block bg-blue-800 text-white text-center py-2 rounded-lg cursor-pointer hover:bg-blue-500 transition"
-                >
-                  🎓 Joindre Diplôme
-                </label>
-
-                {formData.diplome && (
-                  <div className="mt-2 text-sm text-gray-600">
-                    <p>📑 {formData.diplome.name}</p>
-                    <a
-                      href={formData.diplomePreview}
-                      download={formData.diplome.name}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      Voir / Télécharger
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* === Lettre de motivation === */}
-              <div>
-                <label className="block text-sm font-medium mb-1">
-                  Lettre de motivation
-                </label>
-                <input
-                  id="lettre"
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  className="hidden"
-                  required
-                  onChange={(e) => {
-                    handleChange(e);
-                    if (e.target.files && e.target.files.length > 0) {
-                      const file = e.target.files[0];
-                      setFormData((prev) => ({
-                        ...prev,
-                        lettrePreview: URL.createObjectURL(file),
-                      }));
-                    }
-                  }}
-                />
-                <label
-                  htmlFor="lettre"
-                  className="block bg-blue-800 text-white text-center py-2 rounded-lg cursor-pointer hover:bg-blue-500 transition"
-                >
-                  ✉️ Joindre Lettre
-                </label>
-
-                {formData.lettre && (
-                  <div className="mt-2 text-sm text-gray-600">
-                    <p>📝 {formData.lettre.name}</p>
-                    <a
-                      href={formData.lettrePreview}
-                      download={formData.lettre.name}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      Voir / Télécharger
-                    </a>
-                  </div>
-                )}
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { id: "cv", label: "📎 CV", color: "bg-blue-700" },
+                { id: "diplome", label: "🎓 Diplôme", color: "bg-indigo-700" },
+                { id: "lettre", label: "✉️ Lettre", color: "bg-blue-900" },
+              ].map((f) => (
+                <div key={f.id}>
+                  <label
+                    htmlFor={f.id}
+                    className={`${f.color} text-white text-center block py-2 rounded-lg cursor-pointer hover:opacity-90 transition`}
+                  >
+                    {f.label}
+                  </label>
+                  <input
+                    id={f.id}
+                    type="file"
+                    className="hidden"
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              ))}
             </div>
 
             {/* --- Bouton --- */}

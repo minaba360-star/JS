@@ -38,4 +38,3 @@ npm run build && npm run preview
 ```bash
 npm run lint
 ```
-# JS

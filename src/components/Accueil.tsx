@@ -8,21 +8,21 @@ const sampleOffers = offersData;
 
 function Accueil() {
   const [search, setSearch] = useState("");
-  const [filterType, setFilterType] = useState("Tous");
-  const [filterLocation, setFilterLocation] = useState("Tous");
-  const [filterDomain, setFilterDomain] = useState("Tous");
+  const [filterType, setFilterType] = useState("Offre");
+  const [filterLocation, setFilterLocation] = useState("Région");
+  const [filterDomain, setFilterDomain] = useState("Domaine");
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
   const offersPerPage = 6;
 
-  const locations = ["Tous", ...new Set(sampleOffers.map((o) => o.location))];
-  const domains = ["Tous", ...new Set(sampleOffers.map((o) => o.domain))];
+  const locations = ["Région", ...new Set(sampleOffers.map((o) => o.location))];
+  const domains = ["Domaine", ...new Set(sampleOffers.map((o) => o.domain))];
 
   const filteredOffers = sampleOffers.filter((offer) => {
     const matchSearch = offer.title.toLowerCase().includes(search.toLowerCase());
-    const matchType = filterType === "Tous" || offer.type === filterType;
-    const matchLocation = filterLocation === "Tous" || offer.location === filterLocation;
-    const matchDomain = filterDomain === "Tous" || offer.domain === filterDomain;
+    const matchType = filterType === "Offre" || offer.type === filterType;
+    const matchLocation = filterLocation === "Région" || offer.location === filterLocation;
+    const matchDomain = filterDomain === "Domaine" || offer.domain === filterDomain;
     return matchSearch && matchType && matchLocation && matchDomain;
   });
 
@@ -35,12 +35,12 @@ function Accueil() {
   const handleNext = () => { if (currentPage < totalPages) setCurrentPage(currentPage + 1); };
 
   // Icônes simples pour domaines
-  const domainIcons: Record<string, string> = {
-    Informatique: "💻",
-    Marketing: "📢",
-    Finance: "💰",
-    RH: "👥",
-    Tous: "",
+  const domaine: Record<string, string> = {
+    Informatique : "",
+    Marketing : "",
+    Finance : "",
+    RH : "",
+    Offre : "",
   };
 
   // Gestion du clic sur "Postuler"
@@ -83,7 +83,7 @@ function Accueil() {
             onChange={(e) => { setFilterType(e.target.value); setCurrentPage(1); }}
             className="border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200"
           >
-            <option value="Tous">Tous</option>
+            <option value="Offre">Offres</option>
             <option value="Stage">Stage</option>
             <option value="Emploi">Emploi</option>
           </select>
@@ -116,7 +116,7 @@ function Accueil() {
                   <p className="flex items-center text-sm text-gray-600 mb-4 flex-wrap gap-2">
                     <span>{offer.type}</span>
                     <span>{offer.location}</span>
-                    <span>{domainIcons[offer.domain] || ""} {offer.domain}</span>
+                    <span>{domaine[offer.domain] || ""} {offer.domain}</span>
                   </p>
                   <div className="flex gap-2">
                     <button

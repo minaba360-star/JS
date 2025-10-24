@@ -54,7 +54,26 @@ const Login: React.FC = () => {
         navigate("/admin", { replace: true });
         return;
       }
+// --- Vérifier si recruteur ---
+      const recruteurEmails = ["amina@gmail.com", "aline@gmail.com"];
+      const recruteurPassword = "recrut123";
+    
+      if (recruteurEmails.includes(email) && password === recruteurPassword) {
+        const recruteurUser: User = {
+          email, role: "recruteur", nom: "Recruteur",
+          password: ""
+        };
+        localStorage.setItem("user", JSON.stringify(recruteurUser));
 
+        Swal.fire({
+          icon: "success",
+          title: "Bienvenue Recruteur !",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/dashboardRecruteur", { replace: true });
+       return;
+}
       // --- Vérifier si candidat ---
       const resCand = await fetch(`${API_URL}/candidats`);
       const candidats: User[] = await resCand.json();

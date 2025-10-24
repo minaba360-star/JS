@@ -1,5 +1,5 @@
 export interface Offer {
-  domain: any;
+  domain: unknown;
   id: number;
   title: string;
   type: string;
@@ -55,7 +55,8 @@ export const offersData: Offer[] = [
     education: "Bac+2 minimum",
     skills: ["React", "JavaScript", "HTML", "CSS", "Git"],
     publishedDate: "2024-01-15",
-    deadline: "2024-02-15"
+    deadline: "2024-02-15",
+    domain: undefined
   },
   {
     id: 2,
@@ -92,7 +93,8 @@ export const offersData: Offer[] = [
     education: "Bac+3 minimum",
     skills: ["Pédagogie", "Communication", "Gestion de classe", "Évaluation"],
     publishedDate: "2024-01-10",
-    deadline: "2024-02-10"
+    deadline: "2024-02-10",
+    domain: undefined
   },
   {
     id: 3,
@@ -129,7 +131,8 @@ export const offersData: Offer[] = [
     education: "Bac+2 minimum",
     skills: ["Marketing Digital", "Réseaux Sociaux", "Création de Contenu", "Analytics"],
     publishedDate: "2024-01-12",
-    deadline: "2024-02-12"
+    deadline: "2024-02-12",
+    domain: undefined
   },
   {
     id: 4,
@@ -166,7 +169,8 @@ export const offersData: Offer[] = [
     education: "Bac+3 minimum",
     skills: ["Gestion de stocks", "Supply Chain", "Excel", "SAP", "Communication"],
     publishedDate: "2024-01-08",
-    deadline: "2024-02-08"
+    deadline: "2024-02-08",
+    domain: undefined
   },
   {
     id: 5,
@@ -203,7 +207,8 @@ export const offersData: Offer[] = [
     education: "Bac+3 minimum",
     skills: ["React", "Node.js", "MongoDB", "Git", "Docker"],
     publishedDate: "2024-01-05",
-    deadline: "2024-02-05"
+    deadline: "2024-02-05",
+    domain: undefined
   },
   {
     id: 6,
@@ -240,7 +245,8 @@ export const offersData: Offer[] = [
     education: "Bac+2 minimum",
     skills: ["Comptabilité", "Excel", "Sage", "Analyse financière"],
     publishedDate: "2024-01-18",
-    deadline: "2024-02-18"
+    deadline: "2024-02-18",
+    domain: undefined
   }
 ];
 

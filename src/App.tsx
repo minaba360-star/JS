@@ -4,11 +4,12 @@ import FormulaireInscription from "./components/FormulaireInscription";
 import Login from "./components/Login";
 import DashboardCandidat from "./components/DashboardCandidat";
 import DashboardAdmin from "./components/DashboardAdmin";
-import Recruteur from "./components/Recruteur";
 import Accueil from "./components/Accueil";
 import DetailOffre from "./components/DetailOffre";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ModifierCandidat from "./components/ModifierCandidat";
+import DashboardRecruteur from "./components/DashboardRecruteur";
 
 // Layout principal : gère Navbar/Footer selon la page
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -54,11 +55,11 @@ const App: React.FC = () => {
           <Route path="/inscription" element={<FormulaireInscription />} />
 
           {/* Recruteur */}
-          <Route path="/recruteur" element={<Recruteur />} />
+          <Route path="/dashboardrecruteur" element={<DashboardRecruteur />} />
 
           {/* Dashboard candidat */}
           <Route path="/dashboardcandidat" element={<DashboardCandidat />} />
-
+    <Route path="/modifiercandidat/:id" element={<ModifierCandidat />} />
           {/* Dashboard admin */}
           <Route path="/admin" element={<DashboardAdmin />} />
 
